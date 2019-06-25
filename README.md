@@ -52,6 +52,10 @@ To build your own image, follow the steps below:
 docker build -t "raspberryvalley/docker-nodered:rpi" .
 ```
 
+## Development image for Windows
+
+We have bundled a dockerfile to this repository, which allows you to create a quick and dirty Windows image, for development of concepts. This image is based on the official [node-red-docker](https://hub.docker.com/r/nodered/node-red-docker) image (latest) and bundles in Node-RED Dashboard. Use as you would on a Raspberry Pi, just substitute the **rpi** tag with **pc**.
+
 ## Links
 
 Raspberry Valley makerspace links
