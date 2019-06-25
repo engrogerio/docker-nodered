@@ -6,19 +6,37 @@ This is yet another Node-RED image for use in our makerspace. It includes Node-R
 
 ## Docker Image
 
-Our Docker image is based on a [Balena base image](https://www.balena.io/docs/reference/base-images/base-images/) with Node.
+Our Docker image is based on a [Balena base image](https://www.balena.io/docs/reference/base-images/base-images/) with Node. It is targeted at Raspberry Pi 3, you can check all available images [here](https://www.balena.io/docs/reference/base-images/base-images-ref/) (search for the 'Raspberry Pi 3' section).
 
 The image contains also the following extras:
 
 * Node-RED Dashboard
 
+---
+
+Please note that we provide only the Raspberry Pi image, tagged as **rpi**. We use the official, non-modified PC image for testing.
+
+---
+
 ## Getting the Node-RED Image
 
-You can pull the image from our Raspberry Valley Docker Hub. Simply type the following:
+You can pull the image from our [Raspberry Valley Docker Hub](https://cloud.docker.com/u/raspberryvalley/repository/docker/raspberryvalley/nodered). Simply type the following:
 
 ```bash
 docker pull raspberryvalley/nodered:rpi
 ```
+
+Note: This is an optional step which fits our workflow. If you don't pull the image, the run scripts below will do it for you.
+
+## Running the image
+
+First time, you need to create the container.
+
+```bash
+docker run -d -p 1880:1880 --name mynodered raspberryvalley/nodered:rpi
+```
+
+This launches your server in the background, exposing the appropriate port. Note that after a restart you need to start the container which was just created above.
 
 ## Building your own
 
