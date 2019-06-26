@@ -14,6 +14,3 @@ VOLUME /root/.node-red/
 
 # Expose port 1880
 EXPOSE 1880
-
-# Setup start command
-CMD node-red-docker
