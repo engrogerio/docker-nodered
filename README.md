@@ -1,7 +1,5 @@
 # Node-RED docker image for Raspberry Pi
 
-We are a maker community in Karlskrona, Sweden. See our site for other ideas and activities: [Raspberry Valley](https://raspberry-valley.azurewebsites.net).
-
 This is yet another Node-RED image for use in our makerspace. It includes Node-RED Dashboard on top.
 
 ## Docker Image
@@ -55,6 +53,14 @@ docker build -t "raspberryvalley/docker-nodered:rpi" .
 ## Development image for Windows
 
 We have bundled a dockerfile to this repository, which allows you to create a quick and dirty Windows image, for development of concepts. This image is based on the official [node-red-docker](https://hub.docker.com/r/nodered/node-red-docker) image (latest) and bundles in Node-RED Dashboard. Use as you would on a Raspberry Pi, just substitute the **rpi** tag with **pc**.
+
+## About
+
+Raspberry Valley is a maker community in Karlskrona, Sweden, sponsored by [Dynapac](https://dynapac.com/en). We run makerspaces every week, working with Raspberry Pis, Arduinos and other interesting hardware.
+
+This repository is here to support our community of makers. A lot of our achievements are based and inspired by the community at large. We wish to pay back and share our experiences and lessons learned. Join us!
+
+You can find our pages here: [Raspberry Valley](https://raspberry-valley.azurewebsites.net). You can also join us on [Twitter](https://twitter.com/RaspberryValley) or check [Docker Hub](https://hub.docker.com/r/raspberryvalley/) for images of interest.
 
 ## Links
 
