@@ -4,22 +4,31 @@ This is yet another Node-RED image for use in our makerspace. It includes Node-R
 
 ## Docker Image
 
-Our Docker image is based on a [Balena base image](https://www.balena.io/docs/reference/base-images/base-images/) with Node. It is targeting Raspberry Pi 3, you can check all other available Balena images [here](https://www.balena.io/docs/reference/base-images/base-images-ref/) (search for the 'Raspberry Pi 3' section).
+Our Docker images are based on one or another [Balena base image](https://www.balena.io/docs/reference/base-images/base-images/) with Node. They are targeting Raspberry Pi 3, you can check all other available Balena images [here](https://www.balena.io/docs/reference/base-images/base-images-ref/) (search for the 'Raspberry Pi 3' section).
 
 The images contain also the following extras:
 
-* Node-RED Dashboard (both ```rpi``` and ```pc```)
-* MQTT Aedes Node (```pc``` version only)
+* Node-RED Dashboard (on all containers)
+    * Other selected nodes we use very often in our makerspace (see our [node-RED article](https://raspberry-valley.azurewebsites.net/Node-RED/))
+* MQTT Aedes Node (only on the ```pc``` version)
+* Python 3 (```nodered-python``` versions only)
 
 ---
 
-Please note that we provide both the Raspberry Pi image, tagged as **rpi**, and a slightly extended PC image, tagged as **pc**.
+Please note that we provide our base images on the ```nodered-python``` versions, which are currently the branch under development. An older, yet still very useful version called simply ```nodered:rpi``` is kept for our current users and is not developed anymore. We also keep a PC development version ```nodered:pc```, just in case.
+
+Please also note, that due to build errors on bcrypt, we have commented out **node-red-contrib-web-worldmap**. It's OK though to install it from the palette once the container is running.
 
 ---
 
 ## Getting the Node-RED Image
 
 You can pull the image from our [Raspberry Valley Docker Hub](https://cloud.docker.com/u/raspberryvalley/repository/docker/raspberryvalley/nodered). Simply type the following:
+
+```bash
+docker pull raspberryvalley/nodered-python:1.0.0
+```
+Or for the older version
 
 ```bash
 docker pull raspberryvalley/nodered:rpi
@@ -38,7 +47,7 @@ Note: This is an optional step which fits our workflow. If you don't pull the im
 First time, you need to create the container.
 
 ```bash
-docker run -d -p 1880:1880 --name mynodered raspberryvalley/nodered:rpi
+docker run -d -p 1880:1880 --name mynodered <name-of-chosen-image>
 ```
 
 This launches your server in the background, exposing the appropriate port. Note that after a restart you need to start the container which was just created above. To see other options (opening MQTT ports for example), visit our knowledge-base page [Node-RED on Docker](http://raspberry-valley.azurewebsites.net/Node-RED-on-Docker/).
@@ -54,7 +63,7 @@ To build your own image, follow the steps below:
 * Update/modify the Dockerfile to your liking, then invoke the build command:
 
 ```bash
-docker build -t "raspberryvalley/docker-nodered:rpi" .
+docker build -t "<name-of-chosen-image>" .
 ```
 
 ## Development image for Windows
