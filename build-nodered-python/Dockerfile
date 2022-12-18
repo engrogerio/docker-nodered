@@ -27,8 +27,15 @@ RUN npm install -g node-red && \
     npm install -g node-red-contrib-msg-speed && \
     npm install -g node-red-contrib-counter && \
     npm install -g node-red-contrib-statistics && \
-    npm install -g node-red-contrib-maps
-    # npm install -g node-red-contrib-web-worldmap
+    npm install -g node-red-contrib-map
+    npm install -g node-red-node-pi-gpio && \
+    npm install -g node-red-node-random && \
+    npm install -g node-red-node-ping && \
+    npm install -g node-red-contrib-play-audio && \
+    npm install -g node-red-node-smooth && \
+    npm install -g node-red-node-serialport && \
+    npm install -g node-red-contrib-buffer-parser && \
+    npm install -g node-red-contrib-web-worldmap
 
 # Create volume for Node-RED storage
 VOLUME /root/.node-red/
