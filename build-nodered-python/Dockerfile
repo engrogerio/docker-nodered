@@ -8,9 +8,8 @@
 # * Docker hub: hub.docker.com/r/raspberryvalley/
 # * Follow on Twitter: https://twitter.com/RaspberryValley
 
-FROM balenalib/raspberrypi3-node:12-sid-run
-
-LABEL maintainer = "raspberryvalley@outlook.com"
+FROM balenalib/raspberrypi4-64-node:latest
+LABEL maintainer = "eng.rogerio@gmail.com"
 
 # pre-requisites
 RUN apt-get update && \
