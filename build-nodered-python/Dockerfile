@@ -17,7 +17,7 @@ RUN apt-get update && \
     apt-get install python3-distutils && \
     apt-get install rpi.gpio && \
     rm -rf /var/lib/apt/lists/*
-
+RUN bash <(curl -sL https://raw.githubusercontent.com/node-red/linux-installers/master/deb/update-nodejs-and-nodered)
 # Install Node-RED (global setup)
 RUN npm install -g node-red && \
     npm install -g node-red-dashboard && \
