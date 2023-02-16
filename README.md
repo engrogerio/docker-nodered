@@ -12,7 +12,11 @@ The images contain also the following extras:
     * Other selected nodes we use very often in our makerspace (see our [node-RED article](https://raspberry-valley.azurewebsites.net/Node-RED/))
 * MQTT Aedes Node (only on the ```pc``` version)
 * Python 3 (```nodered-python``` versions only)
-
+* Raspberry GPIO
+* boolean logic ultimate
+* storage
+* logic
+* dashboard
 ---
 
 Please note that we provide our base images on the ```nodered-python``` versions, which are currently the branch under development. An older, yet still very useful version called simply ```nodered:rpi``` is kept for our current users and is not developed anymore. We also keep a PC development version ```nodered:pc```, just in case.
@@ -20,6 +24,26 @@ Please note that we provide our base images on the ```nodered-python``` versions
 Please also note, that due to build errors on bcrypt, we have commented out **node-red-contrib-web-worldmap**. It's OK though to install it from the palette once the container is running.
 
 ---
+
+## Running a container on Raspberry
+### Build your image:
+```bash
+cd docker-nodered/build-nodered-python
+docker build -t nodered-rpi .
+```
+### Running the container
+```bash
+docker run -d --privileged -p 1880:1880 -v $(dirname"PWD")/project:/root/.node-red --name nodered nodered
+```
+
+### Application url
+Node red: ip:1880
+User interface ip:1880/ui
+
+
+### Project 
+Your project will be saved on .../docker-nodered/project
+
 
 ## Getting the Node-RED Image
 
